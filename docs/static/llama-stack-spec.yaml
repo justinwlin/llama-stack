@@ -3528,6 +3528,7 @@ paths:
             schema:
               $ref: '#/components/schemas/OpenaiCreateVectorStoreRequest'
         required: true
+<<<<<<< HEAD
   /v1/vector_stores/{vector_store_id}/file_batches:
     post:
       responses:
@@ -3566,7 +3567,51 @@ paths:
             schema:
               $ref: '#/components/schemas/OpenaiCreateVectorStoreFileBatchRequest'
         required: true
+=======
+<<<<<<< HEAD
+>>>>>>> f2587c23 (fix pre-commit)
   /v1/files/{file_id}:
+=======
+  /v1/openai/v1/vector_stores/{vector_store_id}/file_batches:
+    post:
+      responses:
+        '200':
+          description: >-
+            A VectorStoreFileBatchObject representing the created file batch.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VectorStoreFileBatchObject'
+        '400':
+          $ref: '#/components/responses/BadRequest400'
+        '429':
+          $ref: >-
+            #/components/responses/TooManyRequests429
+        '500':
+          $ref: >-
+            #/components/responses/InternalServerError500
+        default:
+          $ref: '#/components/responses/DefaultError'
+      tags:
+        - VectorIO
+      summary: Create a vector store file batch.
+      description: Create a vector store file batch.
+      parameters:
+        - name: vector_store_id
+          in: path
+          description: >-
+            The ID of the vector store to create the file batch for.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OpenaiCreateVectorStoreFileBatchRequest'
+        required: true
+  /v1/openai/v1/files/{file_id}:
+>>>>>>> 6a81b760 (fix pre-commit)
     get:
       responses:
         '200':
@@ -3992,6 +4037,7 @@ paths:
                 - file
                 - purpose
         required: true
+<<<<<<< HEAD
   /v1/vector_stores/{vector_store_id}/file_batches/{batch_id}/files:
     get:
       responses:
@@ -4074,6 +4120,9 @@ paths:
           schema:
             type: string
   /v1/files/{file_id}/content:
+=======
+/v1/files/{file_id}/content:
+>>>>>>> f2587c23 (fix pre-commit)
     get:
       responses:
         '200':
@@ -4107,6 +4156,7 @@ paths:
           required: true
           schema:
             type: string
+<<<<<<< HEAD
   /v1/vector_stores/{vector_store_id}/file_batches/{batch_id}:
     get:
       responses:
@@ -4145,7 +4195,51 @@ paths:
           required: true
           schema:
             type: string
+=======
+<<<<<<< HEAD
+>>>>>>> f2587c23 (fix pre-commit)
   /v1/vector_stores/{vector_store_id}/files/{file_id}/content:
+=======
+  /v1/openai/v1/vector_stores/{vector_store_id}/file_batches/{batch_id}:
+    get:
+      responses:
+        '200':
+          description: >-
+            A VectorStoreFileBatchObject representing the file batch.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VectorStoreFileBatchObject'
+        '400':
+          $ref: '#/components/responses/BadRequest400'
+        '429':
+          $ref: >-
+            #/components/responses/TooManyRequests429
+        '500':
+          $ref: >-
+            #/components/responses/InternalServerError500
+        default:
+          $ref: '#/components/responses/DefaultError'
+      tags:
+        - VectorIO
+      summary: Retrieve a vector store file batch.
+      description: Retrieve a vector store file batch.
+      parameters:
+        - name: batch_id
+          in: path
+          description: The ID of the file batch to retrieve.
+          required: true
+          schema:
+            type: string
+        - name: vector_store_id
+          in: path
+          description: >-
+            The ID of the vector store containing the file batch.
+          required: true
+          schema:
+            type: string
+  /v1/openai/v1/vector_stores/{vector_store_id}/files/{file_id}/content:
+>>>>>>> 6a81b760 (fix pre-commit)
     get:
       responses:
         '200':
