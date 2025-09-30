@@ -3618,7 +3618,7 @@ paths:
             schema:
               $ref: '#/components/schemas/OpenaiCreateVectorStoreFileBatchRequest'
         required: true
-    /v1/files/{file_id}:
+  /v1/files/{file_id}:
     get:
       responses:
         '200':
@@ -4046,6 +4046,7 @@ paths:
         required: true
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   /v1/vector_stores/{vector_store_id}/file_batches/{batch_id}/files:
     get:
       responses:
@@ -4134,6 +4135,8 @@ paths:
 =======
 /v1/files/{file_id}/content:
 =======
+=======
+>>>>>>> 943b3715 (add int tests)
   /v1alpha/openai/v1/vector_stores/{vector_store_id}/file_batches/{batch_id}/files:
     get:
       responses:
@@ -4215,6 +4218,7 @@ paths:
           required: false
           schema:
             type: string
+<<<<<<< HEAD
   /v1/openai/v1/models:
     get:
       responses:
@@ -4242,6 +4246,9 @@ paths:
   /v1/openai/v1/files/{file_id}/content:
 >>>>>>> a1b76e7e (add int tests)
 >>>>>>> 2acf255f (add int tests)
+=======
+  /v1/files/{file_id}/content:
+>>>>>>> 943b3715 (add int tests)
     get:
       responses:
         '200':
@@ -4275,6 +4282,7 @@ paths:
           required: true
           schema:
             type: string
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   /v1/vector_stores/{vector_store_id}/file_batches/{batch_id}:
@@ -4324,6 +4332,9 @@ paths:
 =======
 /v1alpha/openai/v1/vector_stores/{vector_store_id}/file_batches/{batch_id}:
 >>>>>>> 2acf255f (add int tests)
+=======
+  /v1alpha/openai/v1/vector_stores/{vector_store_id}/file_batches/{batch_id}:
+>>>>>>> 943b3715 (add int tests)
     get:
       responses:
         '200':
@@ -4361,7 +4372,7 @@ paths:
           required: true
           schema:
             type: string
-/v1/openai/v1/vector_stores/{vector_store_id}/files/{file_id}/content:
+  /v1/vector_stores/{vector_store_id}/files/{file_id}/content:
     get:
       responses:
         '200':
