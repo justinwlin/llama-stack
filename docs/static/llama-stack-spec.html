@@ -5665,6 +5665,40 @@
                 ]
             }
         },
+        "/v1/openai/v1/models": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "A OpenAIListModelsResponse.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OpenAIListModelsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/BadRequest400"
+                    },
+                    "429": {
+                        "$ref": "#/components/responses/TooManyRequests429"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/InternalServerError500"
+                    },
+                    "default": {
+                        "$ref": "#/components/responses/DefaultError"
+                    }
+                },
+                "tags": [
+                    "Models"
+                ],
+                "summary": "List models using the OpenAI API.",
+                "description": "List models using the OpenAI API.",
+                "parameters": []
+            }
+        },
         "/v1/files/{file_id}/content": {
             "get": {
                 "responses": {
