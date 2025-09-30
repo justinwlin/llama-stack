@@ -3369,11 +3369,7 @@ paths:
             schema:
               $ref: '#/components/schemas/OpenaiAttachFileToVectorStoreRequest'
         required: true
-<<<<<<< HEAD
   /v1/vector_stores/{vector_store_id}/file_batches/{batch_id}/cancel:
-=======
-  /v1alpha/openai/v1/vector_stores/{vector_store_id}/file_batches/{batch_id}/cancel:
->>>>>>> 2acf255f (add int tests)
     post:
       responses:
         '200':
@@ -3532,55 +3528,7 @@ paths:
             schema:
               $ref: '#/components/schemas/OpenaiCreateVectorStoreRequest'
         required: true
-<<<<<<< HEAD
-<<<<<<< HEAD
   /v1/vector_stores/{vector_store_id}/file_batches:
-    post:
-      responses:
-        '200':
-          description: >-
-            A VectorStoreFileBatchObject representing the created file batch.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/VectorStoreFileBatchObject'
-        '400':
-          $ref: '#/components/responses/BadRequest400'
-        '429':
-          $ref: >-
-            #/components/responses/TooManyRequests429
-        '500':
-          $ref: >-
-            #/components/responses/InternalServerError500
-        default:
-          $ref: '#/components/responses/DefaultError'
-      tags:
-        - VectorIO
-      summary: Create a vector store file batch.
-      description: Create a vector store file batch.
-      parameters:
-        - name: vector_store_id
-          in: path
-          description: >-
-            The ID of the vector store to create the file batch for.
-          required: true
-          schema:
-            type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/OpenaiCreateVectorStoreFileBatchRequest'
-        required: true
-=======
-<<<<<<< HEAD
->>>>>>> f2587c23 (fix pre-commit)
-  /v1/files/{file_id}:
-=======
-  /v1/openai/v1/vector_stores/{vector_store_id}/file_batches:
-=======
-  /v1alpha/openai/v1/vector_stores/{vector_store_id}/file_batches:
->>>>>>> 2acf255f (add int tests)
     post:
       responses:
         '200':
@@ -4044,9 +3992,6 @@ paths:
                 - file
                 - purpose
         required: true
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   /v1/vector_stores/{vector_store_id}/file_batches/{batch_id}/files:
     get:
       responses:
@@ -4129,126 +4074,6 @@ paths:
           schema:
             type: string
   /v1/files/{file_id}/content:
-=======
-/v1/files/{file_id}/content:
->>>>>>> f2587c23 (fix pre-commit)
-=======
-/v1/files/{file_id}/content:
-=======
-=======
->>>>>>> 943b3715 (add int tests)
-  /v1alpha/openai/v1/vector_stores/{vector_store_id}/file_batches/{batch_id}/files:
-    get:
-      responses:
-        '200':
-          description: >-
-            A VectorStoreFilesListInBatchResponse containing the list of files in
-            the batch.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/VectorStoreFilesListInBatchResponse'
-        '400':
-          $ref: '#/components/responses/BadRequest400'
-        '429':
-          $ref: >-
-            #/components/responses/TooManyRequests429
-        '500':
-          $ref: >-
-            #/components/responses/InternalServerError500
-        default:
-          $ref: '#/components/responses/DefaultError'
-      tags:
-        - VectorIO
-      summary: >-
-        Returns a list of vector store files in a batch.
-      description: >-
-        Returns a list of vector store files in a batch.
-      parameters:
-        - name: batch_id
-          in: path
-          description: >-
-            The ID of the file batch to list files from.
-          required: true
-          schema:
-            type: string
-        - name: vector_store_id
-          in: path
-          description: >-
-            The ID of the vector store containing the file batch.
-          required: true
-          schema:
-            type: string
-        - name: after
-          in: query
-          description: >-
-            A cursor for use in pagination. `after` is an object ID that defines your
-            place in the list.
-          required: false
-          schema:
-            type: string
-        - name: before
-          in: query
-          description: >-
-            A cursor for use in pagination. `before` is an object ID that defines
-            your place in the list.
-          required: false
-          schema:
-            type: string
-        - name: filter
-          in: query
-          description: >-
-            Filter by file status. One of in_progress, completed, failed, cancelled.
-          required: false
-          schema:
-            type: string
-        - name: limit
-          in: query
-          description: >-
-            A limit on the number of objects to be returned. Limit can range between
-            1 and 100, and the default is 20.
-          required: false
-          schema:
-            type: integer
-        - name: order
-          in: query
-          description: >-
-            Sort order by the `created_at` timestamp of the objects. `asc` for ascending
-            order and `desc` for descending order.
-          required: false
-          schema:
-            type: string
-<<<<<<< HEAD
-  /v1/openai/v1/models:
-    get:
-      responses:
-        '200':
-          description: A OpenAIListModelsResponse.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/OpenAIListModelsResponse'
-        '400':
-          $ref: '#/components/responses/BadRequest400'
-        '429':
-          $ref: >-
-            #/components/responses/TooManyRequests429
-        '500':
-          $ref: >-
-            #/components/responses/InternalServerError500
-        default:
-          $ref: '#/components/responses/DefaultError'
-      tags:
-        - Models
-      summary: List models using the OpenAI API.
-      description: List models using the OpenAI API.
-      parameters: []
-  /v1/openai/v1/files/{file_id}/content:
->>>>>>> a1b76e7e (add int tests)
->>>>>>> 2acf255f (add int tests)
-=======
-  /v1/files/{file_id}/content:
->>>>>>> 943b3715 (add int tests)
     get:
       responses:
         '200':
@@ -4282,59 +4107,7 @@ paths:
           required: true
           schema:
             type: string
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   /v1/vector_stores/{vector_store_id}/file_batches/{batch_id}:
-    get:
-      responses:
-        '200':
-          description: >-
-            A VectorStoreFileBatchObject representing the file batch.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/VectorStoreFileBatchObject'
-        '400':
-          $ref: '#/components/responses/BadRequest400'
-        '429':
-          $ref: >-
-            #/components/responses/TooManyRequests429
-        '500':
-          $ref: >-
-            #/components/responses/InternalServerError500
-        default:
-          $ref: '#/components/responses/DefaultError'
-      tags:
-        - VectorIO
-      summary: Retrieve a vector store file batch.
-      description: Retrieve a vector store file batch.
-      parameters:
-        - name: batch_id
-          in: path
-          description: The ID of the file batch to retrieve.
-          required: true
-          schema:
-            type: string
-        - name: vector_store_id
-          in: path
-          description: >-
-            The ID of the vector store containing the file batch.
-          required: true
-          schema:
-            type: string
-=======
-<<<<<<< HEAD
->>>>>>> f2587c23 (fix pre-commit)
-  /v1/vector_stores/{vector_store_id}/files/{file_id}/content:
-=======
-  /v1/openai/v1/vector_stores/{vector_store_id}/file_batches/{batch_id}:
-=======
-/v1alpha/openai/v1/vector_stores/{vector_store_id}/file_batches/{batch_id}:
->>>>>>> 2acf255f (add int tests)
-=======
-  /v1alpha/openai/v1/vector_stores/{vector_store_id}/file_batches/{batch_id}:
->>>>>>> 943b3715 (add int tests)
     get:
       responses:
         '200':
